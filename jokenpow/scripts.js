@@ -7,20 +7,17 @@ let machineScoreNumber = 0;
 
 const playHuman = (humanChoice) => {
   const machineChoice = playMachine();
-
-  playTheGame(humanChoice, machineChoice);
+  playTheGame(humanChoice, machineChoice.trim()); 
 };
 
 const playMachine = () => {
-  const choices = [" rock ", " paper ", " scissors "];
+  const choices = ["rock", "paper", "scissors"]; 
   const randomNumber = Math.floor(Math.random() * 3);
-
-  console.log(randomNumber);
   return choices[randomNumber];
 };
 
 const playTheGame = (human, machine) => {
-  console.log("Humano: " + human + " Maquina: " + machine);
+  console.log("Humano: " + human + " Máquina: " + machine); 
 
   if (human === machine) {
     result.innerHTML = "Deu empate!";
@@ -31,7 +28,6 @@ const playTheGame = (human, machine) => {
   ) {
     humanScoreNumber++;
     humanScore.innerHTML = humanScoreNumber;
-
     result.innerHTML = "Você ganhou!";
   } else {
     machineScoreNumber++;
